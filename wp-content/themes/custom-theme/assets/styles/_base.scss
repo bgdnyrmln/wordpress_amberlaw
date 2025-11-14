@@ -24,7 +24,7 @@ body {
   font-size: var(--font-size-body);
   font-weight: 300;
   line-height: normal;
-  background-color: rgb(195, 195, 195);
+  background-color: var(--color-background);
 
   @media (max-width: $breakpoint-tablet-horizontal) {
     font-size: 1.6rem;

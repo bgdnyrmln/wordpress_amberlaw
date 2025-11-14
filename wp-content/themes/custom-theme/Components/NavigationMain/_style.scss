@@ -3,7 +3,7 @@ flynt-component[name='NavigationMain'] {
   @import 'Partials/menu'; 
   @import 'Partials/languages';
 
-  --navigation-height: 100px;
+  --navigation-height: 150px;
   background-color: transparent;
   display: block;
   color: white;
@@ -25,7 +25,7 @@ flynt-component[name='NavigationMain'] {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 93%;
     max-width: 1200px; 
     margin: 0 auto;
     padding: 0 2rem;

@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@fontsource-variable/open-sans": "^5.2.7",
+    "@fontsource/poppins": "^5.2.7",
     "body-scroll-lock": "^3.1.5",
     "delegate-event-listener": "^1.2.0",
     "fslightbox": "^3.7.4",
