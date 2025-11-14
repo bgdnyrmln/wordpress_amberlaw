@@ -1,0 +1,15 @@
+.figure {
+  margin-block-end: 0;
+
+  &-image-svg {
+    aspect-ratio: 16 / 9;
+  }
+
+  &[data-state='isHidden'] {
+    visibility: hidden;
+  }
+
+  img {
+    aspect-ratio: 16 / 9;
+  }
+}

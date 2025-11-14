@@ -1,0 +1,115 @@
+flynt-component[name='GridPostsArchive'] {
+  padding-block-end: 9.4rem;
+  padding-block-start: 5.8rem;
+
+  @media (max-width: $breakpoint-tablet-horizontal) {
+    padding-block-end: 4rem;
+    padding-block-start: 11.1rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-block-end: 4.8rem;
+    text-align: center;
+  }
+
+  .container {
+    max-inline-size: calc(114rem + var(--container-spacing)* 2);
+  }
+
+  .posts {
+    --grid-columns: 1;
+    display: grid;
+    gap: 4.8rem;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    row-gap: 2.3rem;
+
+    @media (max-width: $breakpoint-tablet-horizontal) {
+      gap: 7rem;
+      margin-block-start: 2.5rem;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      --grid-columns: 2;
+    }
+
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      --grid-columns: 3;
+    }
+  }
+
+  .posts-empty {
+    text-align: center;
+  }
+
+  .post {
+    align-items: center;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    inline-size: var(--grid-item-width);
+    max-inline-size: var(--grid-item-max-width);
+    overflow: hidden;
+    position: relative;
+
+    &-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      line-height: normal;
+      margin-block-end: 1.6rem;
+      padding-inline-end: 2rem;
+      position: relative;
+      text-align: start;
+
+      @media (max-width: $breakpoint-tablet-horizontal) {
+        font-size: 1.6rem;
+      }
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Vector' d='M1.15916 2.40374C0.840529 2.08511 0.857572 1.55088 1.19812 1.21033C1.53866 0.869788 2.0729 0.852745 2.39153 1.17137L9.76577 8.54562L9.93561 2.9414C9.94283 2.7079 10.044 2.4928 10.2022 2.33464C10.3595 2.17731 10.573 2.07616 10.805 2.06819C11.2708 2.05179 11.6372 2.41655 11.6232 2.88234L11.3918 10.5307C11.3853 10.755 11.2891 10.9736 11.1252 11.1375C10.9613 11.3014 10.7416 11.3979 10.5177 11.4041L2.88124 11.6235C2.41506 11.6372 2.05113 11.27 2.06794 10.8037C2.08555 10.3374 2.47654 9.94869 2.9423 9.93548L8.52794 9.77499L1.15916 2.40374Z' fill='%230056BC'/%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        block-size: 1.2rem;
+        content: '';
+        display: block;
+        inline-size: 1.2rem;
+        inset-block-start: 0.9rem;
+        inset-inline-end: 0.3rem;
+        position: absolute;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      inline-size: 100%;
+      inset: 0;
+      justify-content: flex-end;
+      padding-block: 2rem;
+
+      @media (max-width: $breakpoint-tablet-horizontal) {
+        padding: 2.3rem;
+      }
+    }
+
+    &-description {
+      line-height: 120%;
+    }
+
+    &-image,
+    &-placeholder {
+      aspect-ratio: 1 / 0.61;
+      background-color: #dde0e7;
+      border-radius: 0.2rem;
+      inline-size: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @import 'Partials/pagination';
+}

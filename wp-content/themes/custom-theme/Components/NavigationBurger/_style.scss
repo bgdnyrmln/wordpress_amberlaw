@@ -1,0 +1,44 @@
+flynt-component[name='NavigationBurger'] {
+  --navigation-height: 10rem;
+  block-size: var(--navigation-height);
+  display: none;
+  font-family: var(--font-family-heading);
+  inline-size: 100%;
+  position: absolute;
+
+  @media (max-width: $breakpoint-tablet-horizontal) {
+    display: block;
+  }
+
+  &[data-status='menuIsOpen'] {
+    &::before {
+      background-color: #000;
+      block-size: 100%;
+      content: '';
+      display: block;
+      inline-size: 100%;
+      inset: 0;
+      opacity: 0.65;
+      position: fixed;
+    }
+  }
+
+  .container {
+    align-items: center;
+    block-size: var(--navigation-height);
+    display: flex;
+    inline-size: 100%;
+    inset-block-start: 0;
+    inset-inline: 0;
+    justify-content: space-between;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    position: absolute;
+    z-index: 99;
+  }
+
+  @import 'Partials/logo';
+  @import 'Partials/hamburger';
+  @import 'Partials/menu';
+}
+

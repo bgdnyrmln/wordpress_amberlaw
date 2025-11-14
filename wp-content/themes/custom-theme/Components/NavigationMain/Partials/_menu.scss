@@ -1,0 +1,81 @@
+.menu {
+  align-items: center;
+  display: flex;
+  list-style: none;
+
+  .link {
+    border-radius: 0.2rem;
+    font-family: "Poppins", sans-serif;
+    color: currentColor;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    padding-block: 1.2rem;
+    padding-inline: 1.5rem;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    will-change: color;
+
+    &:hover {
+      color: rgb(190, 190, 190);
+    }
+  }
+
+  .item {
+    &:hover {
+      .sub-menu {
+        display: block;
+      }
+    }
+  }
+
+  .sub-menu {
+    background-color: #fff;
+    border-radius: 0.2rem;
+    box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.05);
+    color: var(--color-text);
+    display: none;
+    list-style: none;
+    margin-block-start: 1rem;
+    padding-block: 1.3rem;
+    padding-inline: 0.4rem;
+    position: absolute;
+
+    &::before {
+      block-size: 1.3rem;
+      content: '';
+      inline-size: 100%;
+      inset-block-end: 100%;
+      position: absolute;
+    }
+
+    .link {
+      align-items: center;
+      display: flex;
+      font-weight: 400;
+      gap: 1.4rem;
+      padding-block: 0.8rem;
+      text-transform: none;
+
+      &:hover {
+        font-weight: 600;
+
+        &::after {
+          background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Vector' d='M0.351373 1.4549C0.114388 1.19714 0.127064 0.764955 0.380349 0.489465C0.633635 0.213975 1.03098 0.200188 1.26797 0.457949L6.75268 6.42349L6.879 1.88985C6.88438 1.70095 6.95965 1.52694 7.07728 1.399C7.19429 1.27172 7.3531 1.18989 7.5256 1.18345C7.8721 1.17018 8.14461 1.46526 8.13419 1.84206L7.96208 8.02935C7.95723 8.21083 7.88572 8.38761 7.76381 8.5202C7.6419 8.6528 7.47848 8.73093 7.31193 8.73588L1.6322 8.91344C1.28547 8.92446 1.01479 8.62739 1.0273 8.25019C1.04039 7.87296 1.3312 7.55853 1.67762 7.54784L5.83202 7.41801L0.351373 1.4549Z' fill='%230056BC'/%3E%3C/svg%3E%0A");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          block-size: 0.8rem;
+          content: '';
+          inline-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .current-menu-item {
+    > .link {
+      color: var(--color-accent);
+    }
+  }
+}

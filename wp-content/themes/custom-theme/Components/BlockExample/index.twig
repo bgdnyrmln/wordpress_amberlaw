@@ -1,0 +1,62 @@
+<flynt-component name="BlockExample" load:on="visible">
+  <div class="container">
+    <div class="inner">
+      <div class="content">
+        {# Advantage with twig is that you can use {{ fieldName }} instead of <?= get_field('fieldName') ?> #}
+        {{ content }}
+        <div class="contacts">
+          <div class="contacts-title">{{ contactsTitle }}</div>
+          {% if email %}
+            <a href="{{ email.url }}" class="contacts-email" target="_blank">{{ email.title }}</a>
+          {% endif %}
+          {% if emailAlt %}
+            <a href="{{ emailAlt.url }}" class="contacts-email" target="_blank">{{ emailAlt.title }}</a>
+          {% endif %}
+          {% if phone %}
+            <a href="{{ phone.url }}" class="contacts-phone" target="_blank">{{ phone.title }}</a>
+          {% endif %}
+        </div>
+      </div>
+      {# There is a system for images #}
+      {# 1. The image is lazyloaded using the lazyload class #}
+      {# 2. The image is resized dynamically #}
+      {# 3. The image is replaced using the placeholderImage function #}
+      {% if image %}
+        <img class="image lazyload"
+          src="{{ image.src }}"
+          srcset="{{ image.src|resizeDynamic(1200) }}"
+          width="{{ image.width }}"
+          height="{{ image.height }}"
+          srcset="{{ placeholderImage(image.width, image.height, 'rgba(125, 125, 125, 0.1)') }}"
+          {# Define all possible sizes in data-srcset, and use data-sizes="auto" so that the browser will choose the best size #}
+          data-srcset="
+            {{ image.src|resizeDynamic(1200) }} 1200w,
+            {{ image.src|resizeDynamic(760) }} 760w"
+          data-sizes="auto"
+          alt="{{ image.alt|e }}">
+      {% endif %}
+      <div class="form">
+        <h3>{{ labels.formTitle }}</h3>
+        <p>{{ labels.formDescription }}</p>
+        {# You can include partials like this #}
+        {% include 'Partials/_form.twig' %}
+      </div>
+    </div>
+    <div class="items">
+      {# If you want to loop through an array, use {% for item in fieldName %} #}
+      {% for item in items %}
+        <div class="item">
+          <img class="icon lazyload"
+            src="{{ item.icon.src }}"
+            width="{{ item.icon.width }}"
+            height="{{ item.icon.height }}"
+            srcset="{{ placeholderImage(item.icon.width, item.icon.height, 'rgba(125, 125, 125, 0.1)') }}"
+            data-srcset="{{item.icon.src}}"
+            data-sizes="auto"
+            alt="{{ item.icon.alt|e }}">
+          <p>{{ item.title }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</flynt-component>

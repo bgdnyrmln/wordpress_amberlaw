@@ -1,0 +1,21 @@
+<ul class="menu">
+  {% for item in items %}
+    {% if item.children %}
+      <li class="item {{- item.current ? ' current-menu-item' }} has-children">
+        <a class="link" href="{{ item.link|e('esc_url') }}" {{- item.is_target_blank ? ' target="_blank" rel="noopener noreferrer"' -}}>{{ item.title }}</a>
+        <ul class="sub-menu">
+          {% for child in item.children %}
+            <li class="item {{- child.current ? ' current-menu-item' }}">
+              <a class="link" href="{{ child.link|e('esc_url') }}" {{- child.is_target_blank ? ' target="_blank" rel="noopener noreferrer"' -}}>{{ child.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% else %}
+      <li class="item {{- item.current ? ' current-menu-item' }}">
+        <a class="link" href="{{ item.link|e('esc_url') }}" {{- item.is_target_blank ? ' target="_blank" rel="noopener noreferrer"' -}}>{{ item.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+

@@ -1,0 +1,29 @@
+<script type="application/json">{{ jsonData|json_encode }}</script>
+<form class="contact-form" method="post" action="contact_form" novalidate data-ref="form">
+	<input type="hidden" name="id" value="{{ post.id }}-{{ _key }}">
+	<div class="input-full">
+		<input type="email" name="email" placeholder="{{ __('E-pasts', 'flynt') }}" required>
+	</div>
+	<div class="input-full">
+		<input type="text" name="name" placeholder="{{ __('Vārds', 'flynt') }}" required>
+	</div>
+	<div class="input-full">
+		<input type="text" name="phone" placeholder="{{ __('Tālrunis', 'flynt') }}" required>
+	</div>
+	<div class="input-full">
+		<textarea name="message" class="input input-textarea" placeholder="{{ __('Jautājums', 'flynt') }}"></textarea>
+	</div>
+	<div class="input-footer">
+		<div class="checkbox">
+			<input type="checkbox" name="agree" class="acceptance" id="agree-{{ uuid }}" required>
+			<label class="label" for="agree-{{ uuid }}">{{ privacyNotice }}</label>
+		</div>
+		<button type="submit" class="button"><span class="loader"></span>{{ __('Sūtīt pieteikumu', 'flynt') }}</button>
+	</div>
+	<div class="message success">
+		{{ formMessages.success }}
+	</div>
+	<div class="message error">
+		{{ formMessages.error }}
+	</div>
+</form>

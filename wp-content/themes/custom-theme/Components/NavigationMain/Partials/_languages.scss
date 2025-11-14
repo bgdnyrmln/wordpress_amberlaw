@@ -1,0 +1,80 @@
+.languages {
+  align-items: center;
+  border-radius: 0.2rem;
+  display: flex;
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
+  position: relative;
+
+  &::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cg id='Layer_2' data-name='Layer 2' transform='translate(-5.5 -5.5)'%3E%3Cpath id='Path_6030' data-name='Path 6030' d='M24.029,20.721A9.953,9.953,0,0,0,25.5,15.5h0a9.953,9.953,0,0,0-1.471-5.221l-.005-.009a10,10,0,0,0-17.048,0l-.006.009a10,10,0,0,0,0,10.441l.006.009a10,10,0,0,0,17.048,0Zm-7.251,3.065a2.43,2.43,0,0,1-.649.448,1.465,1.465,0,0,1-1.258,0,3.061,3.061,0,0,1-1.134-1,8.938,8.938,0,0,1-1.292-2.8q1.526-.094,3.055-.1t3.055.1a11.28,11.28,0,0,1-.548,1.508,5.8,5.8,0,0,1-1.229,1.844ZM6.643,16.062h4.033a19.843,19.843,0,0,0,.365,3.351q-1.654.146-3.3.4a8.816,8.816,0,0,1-1.1-3.751Zm1.1-4.875q1.645.255,3.3.4a19.809,19.809,0,0,0-.365,3.351H6.643a8.816,8.816,0,0,1,1.1-3.751Zm6.48-3.973a2.43,2.43,0,0,1,.649-.448,1.465,1.465,0,0,1,1.258,0,3.061,3.061,0,0,1,1.134,1,8.938,8.938,0,0,1,1.292,2.8q-1.526.094-3.055.1t-3.055-.1a11.279,11.279,0,0,1,.548-1.508,5.8,5.8,0,0,1,1.229-1.844Zm10.135,7.724H20.323a19.846,19.846,0,0,0-.365-3.352q1.654-.146,3.3-.4A8.816,8.816,0,0,1,24.357,14.938ZM12.171,19.326a18.583,18.583,0,0,1-.371-3.264h7.4a18.579,18.579,0,0,1-.37,3.264q-1.663-.109-3.329-.111T12.171,19.326Zm6.657-7.652a18.585,18.585,0,0,1,.371,3.264H11.8a18.58,18.58,0,0,1,.37-3.264q1.663.109,3.329.111t3.329-.111Zm1.494,4.388h4.034a8.816,8.816,0,0,1-1.1,3.751q-1.645-.255-3.3-.4A19.808,19.808,0,0,0,20.323,16.062Zm2.261-5.909q-1.438.207-2.885.329a12.813,12.813,0,0,0-.669-1.887,7.973,7.973,0,0,0-.93-1.583A8.874,8.874,0,0,1,22.584,10.153ZM9.223,9.223A8.873,8.873,0,0,1,12.9,7.012c-.021.027-.043.053-.063.081A10.257,10.257,0,0,0,11.3,10.481q-1.447-.123-2.887-.329a8.949,8.949,0,0,1,.808-.929ZM8.416,20.847q1.438-.208,2.885-.329a12.813,12.813,0,0,0,.669,1.887,7.974,7.974,0,0,0,.93,1.583,8.874,8.874,0,0,1-4.484-3.141Zm13.361.929A8.873,8.873,0,0,1,18.1,23.988c.021-.027.043-.053.063-.081A10.257,10.257,0,0,0,19.7,20.518q1.447.123,2.887.329a8.95,8.95,0,0,1-.808.929Z' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    block-size: 1.5rem;
+    content: '';
+    cursor: pointer;
+    display: block;
+    inline-size: 1.5rem;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.07);
+
+    ul {
+      display: flex;
+    }
+  }
+
+  ul {
+    --item-spacing: 1.4rem;
+    background-color: #fff;
+    border-radius: 0.2rem;
+    box-shadow: 0 11px 22px #00000029;
+    display: none;
+    flex-direction: column;
+    inset-block-start: 5.4rem;
+    inset-inline-start: -3.7rem;
+    list-style: none;
+    margin: 0;
+    padding-block: 2.5rem;
+    padding-inline-end: 2.4rem;
+    padding-inline-start: 1.6rem;
+    position: absolute;
+    z-index: 10;
+
+    .current-menu-item a {
+      align-items: center;
+      color: var(--color-text);
+      display: flex;
+      font-weight: 600;
+      gap: 1.4rem;
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Vector' d='M0.351373 1.4549C0.114388 1.19714 0.127064 0.764955 0.380349 0.489465C0.633635 0.213975 1.03098 0.200188 1.26797 0.457949L6.75268 6.42349L6.879 1.88985C6.88438 1.70095 6.95965 1.52694 7.07728 1.399C7.19429 1.27172 7.3531 1.18989 7.5256 1.18345C7.8721 1.17018 8.14461 1.46526 8.13419 1.84206L7.96208 8.02935C7.95723 8.21083 7.88572 8.38761 7.76381 8.5202C7.6419 8.6528 7.47848 8.73093 7.31193 8.73588L1.6322 8.91344C1.28547 8.92446 1.01479 8.62739 1.0273 8.25019C1.04039 7.87296 1.3312 7.55853 1.67762 7.54784L5.83202 7.41801L0.351373 1.4549Z' fill='%230056BC'/%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        block-size: 0.8rem;
+        content: '';
+        inline-size: 0.8rem;
+      }
+    }
+
+    &::before {
+      block-size: 4rem;
+      content: '';
+      inline-size: 100%;
+      inset-block-end: 100%;
+      inset-inline-start: 0;
+      position: absolute;
+    }
+  }
+
+  a {
+    color: var(--color-text);
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}

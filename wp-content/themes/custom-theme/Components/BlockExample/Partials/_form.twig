@@ -1,0 +1,33 @@
+{# Larger compontents can use Partials to reuse or organize code even more #}
+{# use inline script any time you want to pass data from Flynt/addComponentData, this is then retrieved in script.js  #}
+<script type="application/json">{{ jsonData|json_encode }}</script>
+{# Note the data-ref="form" attribute on the form, this is used in script.js #}
+<form class="contact-form" method="post" action="contact_form" novalidate data-ref="form">
+	<input type="hidden" name="id" value="{{ post.id }}-{{ _key }}">
+	<div class="input-full">
+		<input type="email" name="email" placeholder="{{ labels.email }}" required>
+	</div>
+	<div class="input-full">
+		<input type="text" name="name" placeholder="{{ labels.name }}" required>
+	</div>
+	<div class="input-full">
+		<input type="text" name="phone" placeholder="{{ labels.phone }}" required>
+	</div>
+	<div class="input-full">
+		<textarea name="message" class="input input-textarea" placeholder="{{ labels.message }}"></textarea>
+	</div>
+	<div class="input-footer">
+		<div class="acceptance">{{ labels.privacyNotice }}</div>
+		{# <div class="checkbox">
+			<input type="checkbox" name="agree" class="acceptance" id="agree-{{ uuid }}" required>
+			<label class="label" for="agree-{{ uuid }}">{{ labels.privacyNotice }}</label>
+		</div> #}
+		<button type="submit" class="button"><span class="loader"></span>{{ labels.submit }}</button>
+	</div>
+	<div class="message success">
+		{{ formMessages.success }}
+	</div>
+	<div class="message error">
+		{{ formMessages.error }}
+	</div>
+</form>

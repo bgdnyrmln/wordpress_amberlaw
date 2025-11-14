@@ -1,0 +1,12 @@
+flynt-component[name='BlockWysiwyg'] {
+  padding-block-end: 5.1rem;
+  padding-block-start: 4.4rem;
+
+  .content {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 0.2rem;
+    box-shadow: 0 4px 80px 0 rgba(20, 28, 45, 0.1);
+    padding-block: 6.2rem;
+    padding-inline: 7.9rem;
+  }
+}

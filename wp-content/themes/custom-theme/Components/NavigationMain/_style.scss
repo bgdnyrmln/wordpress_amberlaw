@@ -1,0 +1,81 @@
+flynt-component[name='NavigationMain'] {
+  @import 'Partials/logo'; 
+  @import 'Partials/menu'; 
+  @import 'Partials/languages';
+
+  --navigation-height: 100px;
+  background-color: transparent;
+  display: block;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-size-body);
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+
+  .navigation {
+    height: var(--navigation-height);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .nav-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .nav-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    button {
+      padding: 1rem 1.25rem;
+      border: 1px solid rgb(190, 190, 190);  
+      background-color: rgb(0, 0, 0, 0.5);
+      border-radius: 9999px;          
+      font-size: var(--font-size-body);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: var(--color-text);
+        color: var(--color-background);
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet-horizontal) {
+    .nav-center {
+      display: none;
+    }
+
+    .nav-container {
+      justify-content: space-between;
+    }
+  }
+}

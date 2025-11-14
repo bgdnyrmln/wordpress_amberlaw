@@ -1,0 +1,43 @@
+<flynt-component name="GridPostsArchive" load:on="visible">
+  <div class="container">
+    <h2>{{ __('Jaunākie raksti un industrijas aktualitātes', 'flynt') }}</h2>
+    {% if posts|length > 0 %}
+      <ul data-ref="posts" class="posts">
+        {% for post in posts %}
+          {% set aria_labelledby_id = uuid ~ '-' ~ loop.index %}
+          <li class="post" id="{{ aria_labelledby_id }}">
+             <a href="{{ post.link }}" class="post">
+              {% if post.thumbnail %}
+                <img class="post-image lazyload"
+                  src="{{ post.thumbnail.src|resizeDynamic(530) }}"
+                  width="{{ 530 }}"
+                  height="{{ 530 }}"
+                  srcset="{{ placeholderImage(530, 530, 'rgba(125, 125, 125, 0.1)') }}"
+                  data-srcset="
+                    {{ post.thumbnail.src|resizeDynamic(530, 530, 'center') }} 530w,
+                    {{ post.thumbnail.src|resizeDynamic(382, 382, 'center') }} 382w,
+                    {{ post.thumbnail.src|resizeDynamic(282, 282, 'center') }} 282w"
+                  data-sizes="auto"
+                  alt="{{ post.thumbnail.alt|e }}">
+              {% else %}
+                <div class="post-placeholder"></div>
+              {% endif %}
+              <div class="post-content">
+                {% if post.title %}
+                  <h2 class="post-title">{{ post.title }}</h2>
+                {% endif %}
+                <p class="post-description">{{ post.excerpt({words: 25, read_more: none}) }}</p>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="posts-empty">{{ __('No post found.', 'flynt') }}</p>
+    {% endif %}
+    {% set pagination = posts.pagination %}
+    {% if pagination.pages %}
+      {% include 'Partials/_pagination.twig' %}
+    {% endif %}
+  </div>
+</flynt-component>

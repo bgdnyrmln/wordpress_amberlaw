@@ -1,0 +1,14 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article>
+    <header>
+      {{ renderComponent('BlockPostHeader', {post: post}) }}
+    </header>
+    <section class="wp-block-post-content is-layout-constrained">
+      <div class="container" data-size="medium">
+        {{ text }}
+      </div>
+    </section>
+  </article>
+{% endblock %}

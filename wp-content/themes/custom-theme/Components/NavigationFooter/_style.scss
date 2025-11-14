@@ -1,0 +1,100 @@
+flynt-component[name='NavigationFooter'] {
+  background-color: var(--color-background-secondary);
+  color: var(--color-text-white);
+  font-size: var(--font-size-body-small);
+  overflow: hidden;
+  padding-block-end: 3.3rem;
+  padding-block-start: 5.7rem;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  .legal {
+    color: var(--color-border);
+    background-color: #F6F7F8;
+    display: flex;
+    height: 54px;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    font-weight: 400;
+    gap: 2.9rem;
+    inline-size: 100%;
+    line-height: 216.667%;
+
+    @media (max-width: $breakpoint-tablet-horizontal) {
+      margin-block-start: 3.2rem;
+    }
+
+    span {
+      opacity: 0.5;
+    }
+
+    .dev {
+      block-size: 2.2rem;
+      display: inline-block;
+      inline-size: 14.8rem;
+    }
+  }
+
+  .wrap {
+    display: flex;
+  }
+
+  .wrap:nth-child(2) {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15rem;
+    margin-left: auto;
+    transform: translateX(-30%); 
+  }
+
+
+  .contact_info{
+    display: flex;
+    flex-direction: column;
+    height: 95px;
+    justify-content: space-between;
+  }
+
+  .to-top {
+    align-items: center;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    font-weight: 400;
+    gap: 0.7rem;
+
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='13' viewBox='0 0 14 13' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 1H14V0H0V1ZM7.00526 13C7.30464 13 7.54697 12.7916 7.54697 12.5348L7.54805 4.59553L10.0739 6.78153C10.2844 6.96387 10.6271 6.9648 10.8398 6.78401C11.0522 6.6029 11.0536 6.30829 10.8427 6.12594L7.38951 3.13738C7.28839 3.04962 7.14935 3 7.00526 3C6.86116 3 6.72285 3.04931 6.62137 3.13707L3.15768 6.12564C2.94678 6.30767 2.9475 6.60228 3.15949 6.78339C3.26494 6.87363 3.40326 6.91891 3.54157 6.91891C3.68061 6.91891 3.81965 6.87301 3.92547 6.78184L6.46355 4.59212V12.5348C6.46355 12.7916 6.70587 13 7.00526 13Z' fill='%23DADFED'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      block-size: 1.4rem;
+      content: '';
+      display: block;
+      inline-size: 1.4rem;
+    }
+  }
+
+  .container {
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 8rem;
+  }
+
+  .logo {
+    inline-size: 21.6rem;
+    margin-block-start: 0.5rem;
+    height: 166px;
+    width: 362px;
+  }
+
+  @import 'Partials/menu';
+}

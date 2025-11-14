@@ -1,0 +1,46 @@
+:root,
+[data-theme='reset'] {
+  --color-accent: #0056bc;
+  --color-secondary: #15273d;
+  --color-text: #13121d;
+
+  // Cookie notice
+  --cc-text: var(--color-text);
+  --cc-btn-primary-bg: var(--color-accent);
+  --cc-btn-primary-hover-bg: var(--color-accent);
+}
+
+// Adjust
+$container-max-width: 124rem; // Container width
+$container-spacing: 2rem; // Container padding
+
+:root {
+  // View _fonts.scss for available font families
+  --font-family-heading: 'Manrope Variable', sans-serif;
+  --font-family-text: 'Manrope Variable', sans-serif;
+  --font-size-body: 1.6rem;
+
+  // These are different for each project, adjust to your needs
+  // Default container width
+  --content-max-width: #{$container-max-width - 6rem};
+  // Container width for wide content ([data-size="wide"])
+  --content-max-width-wide: #{$container-max-width + 10rem};
+  // Container width for full width content ([data-size="full"])
+  --content-max-width-full: #{$container-max-width};
+
+  --container-spacing: #{$container-spacing};
+}
+
+/**
+  * Breakpoints
+  *
+  * Content is automaticly resized if screen size is smaller than
+  * container size and bigger than desktop breakpoint.
+  *
+  * Mobile menu is shown if screen size is smaller than desktop breakpoint.
+  */
+$breakpoint-mobile-horizontal: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-horizontal: 1024px;
+$breakpoint-desktop: 1200px;
+$breakpoint-content: 1439px;

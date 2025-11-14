@@ -1,0 +1,31 @@
+<flynt-component name="BlockPostHeader" {{ not post.thumbnail ? 'data-thumbnail="false"' }}>
+  <div class="container">
+    <div class="content">
+      <a href="#" class="back"></a>
+      <div class="wrap">
+        <h1>{{ post.title }}</h1>
+        <div class="date">
+          {{ post.date('j. M. Y') }} • {{ post.terms('category') | join(', ') }}
+        </div>
+      </div>
+      <ul class="social">
+        <li><a href="#" class="whatsapp"></a></li>
+        <li><a href="#" class="x"></a></li>
+        <li><a href="#" class="linkedin"></a></li>
+        <li><a href="#" class="facebook"></a></li>
+        <li><a href="#" class="copy">{{ __('DALĪTIES', 'flynt') }}</a></li>
+      </ul>
+    </div>
+    {% if post.thumbnail %}
+      <img class="lazyload"
+        src="{{ post.thumbnail.src|resizeDynamic(747) }}"
+        width="{{ 747 }}"
+        height="{{ (747 / post.thumbnail.aspect)|round }}"
+        srcset="{{ placeholderImage(747, 520, 'rgba(125, 125, 125, 0.1)') }}"
+        data-srcset="
+          {{ post.thumbnail.src|resizeDynamic(747, 520, 'center') }} 747w"
+        data-sizes="auto"
+        alt="{{ post.thumbnail.alt|e }}">
+    {% endif %}
+  </div>
+</flynt-component>

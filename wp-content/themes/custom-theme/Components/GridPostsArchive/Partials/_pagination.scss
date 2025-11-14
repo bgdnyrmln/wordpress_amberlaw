@@ -1,0 +1,83 @@
+.pagination {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4.6rem;
+  justify-content: center;
+  margin-block-start: 6.4rem;
+  position: relative;
+
+  @media (max-width: $breakpoint-tablet-horizontal) {
+    gap: 1.5rem;
+    margin-block-end: 6.4rem;
+    margin-block-start: 4.5rem;
+  }
+
+  .button {
+    &-loadMore {
+      margin-inline: auto;
+    }
+
+    &-next {
+      @media (max-width: $breakpoint-tablet-horizontal) {
+        order: 3;
+      }
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Group 7304'%3E%3Cg id='Group'%3E%3Cpath id='Vector' opacity='0.7' d='M31.8639 17C31.8639 25.1963 25.1963 31.8639 17 31.8639C8.80369 31.8639 2.13613 25.1963 2.13613 17C2.13613 8.80368 8.80369 2.13612 17 2.13612C25.1963 2.13612 31.8639 8.80369 31.8639 17ZM34 17C34 7.61101 26.389 -3.10501e-07 17 -6.93537e-07C7.61102 -1.07657e-06 3.45906e-06 7.61101 3.02034e-06 17C2.58162e-06 26.389 7.61102 34 17 34C26.389 34 34 26.389 34 17Z' fill='white'/%3E%3C/g%3E%3Cpath id='Vector_2' d='M10.814 17.8204C10.3647 17.8204 10 17.457 10 17.0079C10 16.5588 10.3647 16.1953 10.814 16.1953L21.2138 16.1953L17.3818 12.3882C17.2222 12.2295 17.1419 12.0209 17.1419 11.8124C17.1419 11.6049 17.2212 11.3974 17.3791 11.2392C17.696 10.9213 18.2116 10.9202 18.5301 11.2365L23.7601 16.4321C23.9137 16.5843 24 16.7917 24 17.0079C24 17.224 23.9132 17.4326 23.7596 17.5843L18.5296 22.7641C18.2105 23.0804 17.6949 23.0783 17.378 22.7597C17.0616 22.4407 17.0632 21.9266 17.3823 21.6108L21.2078 17.8221L10.814 17.8204Z' fill='%2313121D'/%3E%3C/g%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        block-size: 3.4rem;
+        content: '';
+        display: block;
+        inline-size: 3.4rem;
+
+        @media (max-width: $breakpoint-tablet-horizontal) {
+          block-size: 3.8rem;
+          inline-size: 3.8rem;
+          margin-inline: -0.4rem;
+        }
+      }
+    }
+
+    &-previous {
+      @media (max-width: $breakpoint-tablet-horizontal) {
+        order: 1;
+      }
+
+      &::before {
+        background-image: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Group 17'%3E%3Cg id='Group'%3E%3Cpath id='Vector' opacity='0.7' d='M2.13613 17C2.13613 8.80369 8.80369 2.13613 17 2.13613C25.1963 2.13613 31.8639 8.80369 31.8639 17C31.8639 25.1963 25.1963 31.8639 17 31.8639C8.80369 31.8639 2.13613 25.1963 2.13613 17ZM2.53989e-07 17C1.13713e-07 26.389 7.61101 34 17 34C26.389 34 34 26.389 34 17C34 7.61102 26.389 4.05246e-06 17 3.96786e-06C7.61102 3.88327e-06 3.94266e-07 7.61102 2.53989e-07 17Z' fill='white'/%3E%3C/g%3E%3Cpath id='Vector_2' d='M23.186 16.1796C23.6353 16.1796 24 16.543 24 16.9921C24 17.4412 23.6353 17.8047 23.186 17.8047L12.7862 17.8047L16.6182 21.6118C16.7778 21.7705 16.8581 21.9791 16.8581 22.1876C16.8581 22.3951 16.7788 22.6026 16.6209 22.7608C16.304 23.0787 15.7884 23.0798 15.4699 22.7635L10.2399 17.5679C10.0863 17.4157 10 17.2083 10 16.9921C10 16.776 10.0868 16.5674 10.2404 16.4157L15.4704 11.2359C15.7895 10.9196 16.3051 10.9217 16.622 11.2403C16.9384 11.5593 16.9368 12.0734 16.6177 12.3892L12.7922 16.1779L23.186 16.1796Z' fill='%2313121D'/%3E%3C/g%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        block-size: 3.4rem;
+        content: '';
+        display: block;
+        inline-size: 3.4rem;
+
+        @media (max-width: $breakpoint-tablet-horizontal) {
+          block-size: 3.8rem;
+          inline-size: 3.8rem;
+          margin-inline: -0.4rem;
+        }
+      }
+    }
+  }
+
+  .current {
+    color: #4d546b;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    @media (max-width: $breakpoint-tablet-horizontal) {
+      margin-inline: 1.6rem;
+      order: 2;
+      position: relative;
+
+      span:first-child {
+        display: none;
+      }
+    }
+  }
+}

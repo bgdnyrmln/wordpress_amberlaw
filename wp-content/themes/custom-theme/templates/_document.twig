@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="html {{ body_class }}" {{ site.language_attributes }}>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" type="application/rss+xml" title="{{- __('%s Feed', 'flynt')|replace({'%s': site.title}) -}}" href="{{ site.rss2|e('esc_url') }}">
+    {{ function('wp_head') }}
+  </head>
+  <body>
+    {{ function('wp_body_open') }}
+    <a href="#mainContent" class="visuallyHidden-focusable">
+      {{- __('Skip to main content', 'flynt') -}}
+    </a>
+    {% block layout %}
+      <div class="pageWrapper">
+        <header class="mainHeader">
+          {% block header %}
+            {{ renderComponent('NavigationMain') }}
+            {{ renderComponent('NavigationBurger') }}
+          {% endblock %}
+        </header>
+        <main id="mainContent" class="mainContent" aria-label="{{- __('Content', 'flynt') -}}">
+          {% block content %}
+            No <code>{{ '{% block content %}' }}</code> defined for this template.
+          {% endblock %}
+        </main>
+        <footer class="mainFooter">
+          {% block footer %}
+            {{ renderComponent('NavigationFooter') }}
+          {% endblock %}
+        </footer>
+      </div>
+    {% endblock %}
+    <div class="wpFooter">
+      {{ function('wp_footer') }}
+    </div>
+  </body>
+</html>

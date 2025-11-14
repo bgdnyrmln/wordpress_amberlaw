@@ -1,0 +1,28 @@
+<flynt-component load:on="idle" load:on:media="(min-width: 1024px)" name="NavigationMain">
+  <nav class="navigation" aria-label="{{ __('Main Navigation', 'flynt') }}">
+    <div class="nav-container">
+      <div class="nav-left">
+        {% include 'Partials/_logo.twig' with {'logo': logo, 'site': site} only %}
+      </div>
+
+      {% if menu %}
+        <div class="nav-center">
+          {% include 'Partials/_menu.twig' with {'items': menu.items} only %}
+        </div>
+      {% endif %}
+
+      <div class="nav-right">
+        <button>lv</button>
+        <button>Sazinies ar mums</button>
+
+        {% if languages %}
+          {% include 'Partials/_languages.twig' with {'items': languages} only %}
+        {% endif %} 
+
+        {% if featured %}
+          <a href="{{ featured.url }}" class="button featured">{{ featured.title }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+</flynt-component>

@@ -1,0 +1,28 @@
+<flynt-component name="NavigationFooter" >
+  <div class="container">
+    <div class="wrap">
+      <img class="logo" src="{{ logo.src }}" alt="{{ logo.alt }}">
+    </div>
+    <div class="wrap">
+      <div>
+        {% if menu %}
+          <nav class="navigation" aria-label="{{ __('Footer Navigation', 'flynt') }}">
+            {% include 'Partials/_menu.twig' with {'items': menu.get_items, 'title': menu.title} only %}
+          </nav>
+        {% endif %}
+      </div>
+      <div class="contact_info">
+        <p>Brīvības iela 57 - 13, Rīga, Latvija, LV-1010</p>
+        <p>amberlaw@amberlaw.lv</p>
+        <p>Tālr. nr. +371 67 289 101</p>
+      </div>
+    </div>
+  </div>
+  <div class="legal">
+      <span>{{legal.copyright}}</span>
+      <a>Lietošanas noteikumi</a>
+      <a href="https://grandem.lv/" class="dev" target="_blank">
+        <img src="{{ dev }}" alt="">
+      </a>
+    </div>
+</flynt-component>

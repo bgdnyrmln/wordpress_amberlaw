@@ -1,0 +1,70 @@
+.menu {
+  backface-visibility: hidden;
+  background-color: var(--color-background);
+  block-size: 100%;
+  inline-size: 100%;
+  inset-block-start: 0;
+  inset-inline-end: -0.1rem;
+  overflow-y: auto;
+  padding-block: 1.7rem;
+  padding-block-start: var(--navigation-height);
+  padding-inline: 2rem;
+  position: fixed;
+  transition: translate 0.45s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.45s;
+  translate: 0 -100%;
+  visibility: hidden;
+  will-change: translate, visibility;
+  z-index: 98;
+
+  .admin-bar & {
+    block-size: calc(100% - var(--navigation-height) - var(--wp-admin--admin-bar--height));
+    inset-block-start: calc(var(--navigation-height) + var(--wp-admin--admin-bar--height));
+  }
+
+  > ul {
+    list-style: none;
+    margin: 0;
+    margin-block-start: 14.1rem;
+    padding: 0;
+
+    li {
+      margin: 0;
+    }
+  }
+
+  .link {
+    color: #fff;
+    display: block;
+    font-size: 2rem;
+    opacity: 0.5;
+    padding-block: 1.4rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .current-menu-item {
+    .link {
+      opacity: 1;
+      position: relative;
+    }
+  }
+}
+
+.accessibility {
+  > flynt-component {
+    background-color: #fff;
+    display: none;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+  }
+}
+
+&[data-status='menuIsOpen'] {
+  .menu {
+    translate: 0 0;
+    visibility: visible;
+  }
+}

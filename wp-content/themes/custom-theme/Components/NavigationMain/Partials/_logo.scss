@@ -1,0 +1,14 @@
+.logo {
+  display: block;
+  flex-shrink: 0;
+  text-decoration: none;
+  height: 52.82px;
+  width: 114.82px;
+
+  &-image {
+    inline-size: 17.8rem;
+    object-fit: contain;
+    object-position: left;
+    transition: inline-size 0.3s ease-in-out;
+  }
+}

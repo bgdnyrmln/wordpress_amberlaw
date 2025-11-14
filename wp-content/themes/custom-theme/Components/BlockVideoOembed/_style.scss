@@ -1,0 +1,135 @@
+flynt-component[name='BlockVideoOembed'] {
+  --im-bg: rgba(0, 0, 0, 0.6);
+  --im-btn-bg: var(--color-accent);
+  --im-btn-hover-bg: var(--color-accent);
+  --im-link-color: var(--color-accent);
+  --im-link-hover-color: var(--color-accent);
+
+  .video {
+    position: relative;
+
+    &-player {
+      block-size: 0;
+      inline-size: 100%;
+      inset-block-start: 0;
+      margin-block-start: 0;
+      padding-block-end: calc(100% / 16 * 9);
+      position: absolute;
+      z-index: 10;
+
+      &[data-state='isBlocked'] {
+        .video-acceptance {
+          display: flex;
+        }
+
+        .video-playButton,
+        .video-loader {
+          display: none;
+        }
+      }
+
+      &[data-state='isLoading'] {
+        .video-loader {
+          display: block;
+        }
+
+        .video-acceptance,
+        .video-playButton {
+          display: none;
+        }
+      }
+
+      &[data-state='isLoaded'] {
+        .video-acceptance,
+        .video-loader,
+        .video-playButton {
+          display: none;
+        }
+
+        iframe {
+          display: block;
+        }
+      }
+    }
+
+    &-acceptance {
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      flex-direction: column;
+      inset: 0;
+      justify-content: center;
+      padding: 2rem;
+      padding-block: 1rem;
+      position: absolute;
+      z-index: 10;
+
+      .title {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 700;
+        max-inline-size: 30rem;
+        text-align: center;
+
+        @media (max-width: $breakpoint-tablet-horizontal) {
+          font-size: 1.8rem;
+        }
+      }
+
+      .notice {
+        color: #fff;
+        font-size: 1.4rem;
+        margin-block-end: 1rem;
+        max-inline-size: 30rem;
+        text-align: center;
+
+        @media (max-width: $breakpoint-tablet-horizontal) {
+          font-size: 1.2rem;
+        }
+      }
+
+      .button {
+        --button-padding-inline: 2rem;
+        --button-padding-block: 1rem;
+        align-items: center;
+        display: flex;
+        font-size: 1.4rem;
+        gap: 1rem;
+        justify-content: center;
+        position: relative;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          position: relative;
+          will-change: translate;
+        }
+
+        &::before {
+          border-block-end: 1rem solid transparent;
+          border-block-start: 1rem solid transparent;
+          border-inline-start: 1.5rem solid var(--color-background);
+
+          @media (min-width: $breakpoint-tablet-horizontal) {
+            border-block-end-width: 1.2rem;
+            border-block-start-width: 1.2rem;
+            border-inline-start-width: 1.8rem;
+          }
+        }
+      }
+    }
+
+    iframe {
+      block-size: 100%;
+      display: none;
+      inline-size: 100%;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      position: absolute;
+    }
+  }
+
+  @import 'Partials/figure';
+  @import 'Partials/videoPlayButton';
+  @import 'Partials/videoLoader';
+}
