@@ -45,3 +45,48 @@
     border: 1px solid rgb(220, 220, 220);
     height: 220px;
 }
+
+.about-box-fortune{
+    display: flex;
+    min-width: 470px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 15px;
+    border: 1px solid rgb(220, 220, 220);
+    height: 220px;
+}
+
+
+.about-header{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+@media (max-width: $breakpoint-tablet-horizontal) {
+    .about-container {
+        text-align: center;
+    }
+
+    .about-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-box {
+        min-width: 100%;
+        max-width: 300px;
+    }
+
+    .about-box-fortune {
+        min-width: 100%;
+        max-width: 300px;
+    }
+
+    .about-header{
+        flex-direction: column;
+        gap: 20px;
+    }
+}
