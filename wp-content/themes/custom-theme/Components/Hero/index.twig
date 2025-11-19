@@ -1,0 +1,43 @@
+<flynt-component name="BlockHero" load:on="visible">
+<section class="hero">
+  <div class="container">
+    <img class = "hero_image" src = "/wordpress/wp-content/themes/custom-theme/assets/images/hero-image.svg"></img>
+    <div style="position: absolute; top: 12vh; left: 0; z-index: -1; width: 100%; justify-content: center; display: flex;">
+      {{ background_svg }}
+    </div>
+    <div class="hero_content">
+      <span class="hero_title">
+        <span class="hero_label">{{ title.hero_label }}</span>
+        {{ title.hero_title }}
+      </span>
+      <p>{{ title.subtitle_text }}</p>
+      <div style="display: flex;">
+        <div class="hero_buttons">
+          <a href="{{ primary_button.url }}">{{ primary_button.label }}</a>
+          <button id="scroll_button">
+            {{ secondary_button }} </br>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 13L12 18L17 13" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 6L12 11L17 6" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="hero_moto" style="padding-top: 4vh;">
+          <span style="font-style: italic; font-weight:500;">{{ moto.moto_title }}</span>
+          <p style="margin-top: 2rem;">{{ moto.moto_subtitle }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</flynt-component>
+
+
+<script>
+  document.getElementById("scroll_button").addEventListener("click", () => {
+      window.scrollBy({
+          top: window.innerHeight,
+          behavior: "smooth"
+      });
+  });
+</script>

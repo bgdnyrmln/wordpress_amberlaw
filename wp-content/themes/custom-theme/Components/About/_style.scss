@@ -65,6 +65,21 @@
     justify-content: space-between;
 }
 
+.about-link{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    gap: 5px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid black;
+
+    &:hover{
+        opacity: 0.5;
+    }
+}
+
 @media (max-width: $breakpoint-tablet-horizontal) {
     .about-container {
         text-align: center;
