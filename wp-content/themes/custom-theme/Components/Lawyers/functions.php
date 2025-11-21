@@ -2,12 +2,9 @@
 namespace Flynt\Components\Lawyers;
 
 
-add_filter('Flynt/addComponentData?name=Lawyers', function ($data) {
-    $data['title'] = get_field('title');
-    $data['subtitle'] = get_field('subtitle');
-    $data['lawyer_list'] = get_field('lawyer_list');
+add_filter('Flynt/addComponentData?name=Lawyers', function ($data, $component) {
     return $data;
-});
+}, 10, 2);
 
 
 function getACFLayout()
@@ -17,37 +14,27 @@ function getACFLayout()
     'label' => 'Lawyers',
     'sub_fields' => [
       [
-        'label' => 'Title',
+        'label' => 'Title line',
         'name' => 'title',
-        'type' => 'text',
-      ],
-      [
-        'label' => 'Subtitle',
-        'name' => 'subtitle',
-        'type' => 'text',
-      ],
-      [
-        'label' => 'Lawyer List',
-        'name' => 'lawyer_list',
-        'type' => 'repeater',
+        'type' => 'group',
         'sub_fields' => [
           [
-            'label' => 'Name',
-            'name' => 'name',
+            'label' => 'Title',
+            'name' => 'title',
             'type' => 'text',
           ],
           [
-            'label' => 'Position',
-            'name' => 'position',
+            'label' => 'Spanned Word',
+            'name' => 'spanned_word',
             'type' => 'text',
-          ],
-          [
-            'label' => 'Photo',
-            'name' => 'photo',
-            'type' => 'image',
           ],
         ],
-      ]
+      ],
+      [
+        'label' => 'Link Text',
+        'name' => 'link',
+        'type' => 'text',
+      ],
     ]
   ];
 }

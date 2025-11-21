@@ -8,11 +8,24 @@
     display: flex; 
     align-items: center; 
     justify-content: flex-start;
+    gap: 260px;
 }
 
 .services-link{
-    flex: 1;
     align-self: flex-start;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    gap: 5px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid black;
+
+    &:hover{
+        opacity: 0.5;
+    }
 }
 
 .services-title-container{

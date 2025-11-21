@@ -1,0 +1,126 @@
+.faq {
+  max-width: 88%;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.faq-title {
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: #000;
+}
+
+.faq-link{ 
+  font-size: 14px; 
+  color: rgb(0, 0, 0); 
+  cursor: pointer; 
+  transition: all 0.2s ease; 
+  
+  &:hover{ 
+    color: rgb(72, 72, 72); 
+  } 
+}
+
+.faq-container {
+  margin-top: 30px;
+  display: flex;
+  gap: 40px;
+}
+
+.faq-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-link-item {
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+  padding: 30px 20px;
+  width: 364px;
+}
+
+.faq-link-item h1{
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.faq-link-item p {
+  font-size: 14px;
+  margin: 24px 0 32px;
+}
+
+.faq-link-item a {
+  font-size: 14px;
+  color: #fff;
+  background-color: #000;
+  padding: 10px 15px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faq-link-item a:hover {
+  background-color: #272727;
+}
+
+.faq-questions-container {
+  flex: 2;
+}
+
+.faq-question-item:first-child {
+  border-top: 1px solid #E5E5E5;
+}
+
+.faq-question-item {
+  border-bottom: 1px solid #E5E5E5;
+  border-radius: 3px;
+}
+
+.faq-question-item details {
+  padding: 25px 0;
+}
+
+.faq-question-item summary {
+  position: relative;
+  padding-right: 20px;
+  cursor: pointer;
+  font-weight: 400;
+  list-style: none;
+  width: 57vw;
+}
+
+.faq-question-item summary::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 14px;
+  height: 8px;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: transform 0.3s ease;
+  background-image: url("data:image/svg+xml;utf8,<svg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L7 7L13 1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+.faq-question-item details[open] summary::after {
+  transform: translateY(-50%) rotate(360deg);
+  background-image: url("data:image/svg+xml;utf8,<svg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M13 7L7 1L1 7' stroke='%23F0963C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+details[open] .faq-answer {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: 20px;
+}
+
+details[open] summary {
+  color: #F0963C;
+}

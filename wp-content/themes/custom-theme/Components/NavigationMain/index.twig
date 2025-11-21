@@ -12,13 +12,10 @@
       {% endif %}
 
       <div class="nav-right">
-        <button>lv</button>
-        <button>Sazinies ar mums</button>
-
         {% if languages %}
           {% include 'Partials/_languages.twig' with {'items': languages} only %}
         {% endif %} 
-
+        <button>Sazinies ar mums</button>
         {% if featured %}
           <a href="{{ featured.url }}" class="button featured">{{ featured.title }}</a>
         {% endif %}

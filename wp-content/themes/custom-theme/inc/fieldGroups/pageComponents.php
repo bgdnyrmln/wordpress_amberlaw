@@ -33,6 +33,7 @@ add_action('Flynt/afterRegisterComponents', function (): void {
                     Components\About\getACFLayout(),
                     Components\Services\getACFLayout(),
                     Components\Lawyers\getACFLayout(),
+                    Components\FAQ\getACFLayout(),
                 ],
             ],
         ],

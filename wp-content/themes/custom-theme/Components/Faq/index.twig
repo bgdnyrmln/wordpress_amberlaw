@@ -1,0 +1,50 @@
+<flynt-component name="FAQ" load:on="visible">
+<section class="faq">
+  <p class="faq-title">{{ title }}</p>
+  <a class="faq-link">{{ link }}</a>
+
+  <div class="faq-container">
+    <div class="faq-links-container">
+    {% for i in 1..2 %}
+      <div class="faq-link-item">
+        <h1>{{ boxes[i].heading }}</h1>
+        <p>{{ boxes[i].text }}</p>
+        <a>{{ boxes[i].link }}</a>
+      </div>
+    {% endfor %}
+    </div>
+
+    <div class="faq-questions-container">
+     {% for i in 1..5 %}
+      <div class="faq-question-item">
+        <details {% if loop.first %}open{% endif %}>
+          <summary>{{ questions[i].question }}</summary>
+          <div class="faq-answer">
+            <p>{{ questions[i].answer }}</p>
+          </div>
+        </details>
+      </div>
+    {% endfor %}
+
+    </div>
+  </div>
+</section>
+</flynt-component>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const allDetails = document.querySelectorAll(".faq-question-item details");
+
+  allDetails.forEach(detail => {
+    detail.addEventListener("toggle", () => {
+      if (detail.open) {
+        allDetails.forEach(otherDetail => {
+          if (otherDetail !== detail) {
+            otherDetail.removeAttribute("open");
+          }
+        });
+      }
+    });
+  });
+});
+</script>
