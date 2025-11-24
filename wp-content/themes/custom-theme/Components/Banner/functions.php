@@ -15,6 +15,23 @@ function getACFLayout()
             [
                 'label' => 'Banner Title',
                 'name'  => 'title',
+                'type'  => 'group',
+                'sub_fields' => [
+                    [
+                        'label' => 'Title First Part',
+                        'name'  => 'first',
+                        'type'  => 'text',
+                    ],
+                    [
+                        'label' => 'Title Second Part',
+                        'name'  => 'second',
+                        'type'  => 'text',
+                    ],
+                ],
+            ],
+            [
+                'label' => 'Subtitle',
+                'name'  => 'subtitle',
                 'type'  => 'text',
             ],
         ]
