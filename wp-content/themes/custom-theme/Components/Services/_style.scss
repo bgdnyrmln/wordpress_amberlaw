@@ -91,6 +91,10 @@
 
 @media (max-width: $breakpoint-tablet-horizontal) {
 
+    .services-header{
+        gap: 50px;
+    }
+
 
     .services-table{
         margin-left: 0px;

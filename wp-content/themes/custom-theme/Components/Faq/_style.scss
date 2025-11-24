@@ -124,3 +124,25 @@ details[open] .faq-answer {
 details[open] summary {
   color: #F0963C;
 }
+
+
+
+@media (max-width: $breakpoint-tablet-horizontal) {
+  .faq-container {
+    flex-direction: column;
+  }
+
+  .faq-links-container {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .faq-link-item {
+    min-width: 300px;
+    width: auto;
+  }
+
+  .faq-question-item summary {
+    width: 80vw;
+  }
+}

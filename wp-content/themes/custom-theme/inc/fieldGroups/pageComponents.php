@@ -34,6 +34,8 @@ add_action('Flynt/afterRegisterComponents', function (): void {
                     Components\Services\getACFLayout(),
                     Components\Lawyers\getACFLayout(),
                     Components\FAQ\getACFLayout(),
+                    Components\Logos\getACFLayout(),
+                    Components\Banner\getACFLayout(),
                 ],
             ],
         ],

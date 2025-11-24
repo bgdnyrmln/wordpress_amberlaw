@@ -1,0 +1,20 @@
+<flynt-component name="BlockLogos">
+<section class="logos">
+  <div class="logos-header">
+    <span class="logos-title">{{ title }}</span>
+    <svg width="109" height="6" viewBox="0 0 109 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M103.401 2.6665C103.401 4.13926 104.595 5.33317 106.068 5.33317C107.541 5.33317 108.734 4.13926 108.734 2.6665C108.734 1.19374 107.541 -0.00016284 106.068 -0.00016284C104.595 -0.00016284 103.401 1.19374 103.401 2.6665ZM0 2.6665V3.1665H106.068V2.6665V2.1665H0V2.6665Z" fill="black"/>
+    </svg>
+    <span class="logos-subtitle">{{ subtitle }}</span>
+  </div>
+  <div class="logos-container">
+    <div class="logos-grid">
+      {% for image in logos_images %}
+        <div class="logo-item">
+          <img class="logo-image" src="{{ image }}">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+</flynt-component>
